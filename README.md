@@ -1,4 +1,4 @@
 # Tala
 Vector-graphics, meditation game made with Unity
 
-Graphics and idea by Ardavan Hemmatpour: https://dribbble.com/Ahp94
+Idea and Ui and Ux by Ardavan Hp: https://dribbble.com/Ahp94
