@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: for now, this is fixed to vertically up and down
-public enum MOVE_STYLES
+public enum MOTION
 {
-    DISPLACEMENT_VERTICAL,
-    DISPLACEMENT_HORIZONTAL,
+    DISPLACEMENT,
+    ROTATION,
 };
 
 public enum MOVE_STATE
@@ -20,7 +20,7 @@ public enum MOVE_STATE
 
 public class PuzzlePiece : MonoBehaviour
 {
-    public MOVE_STYLES moveStyle = MOVE_STYLES.DISPLACEMENT_VERTICAL; //Move vertically
+    public MOTION motion = MOTION.DISPLACEMENT;
     private float startPosition;
     public float endPosition;
     private float currentPosition;
@@ -32,19 +32,40 @@ public class PuzzlePiece : MonoBehaviour
     private MOVE_STATE moveState;
     private Action puzzleSolvedAction;
 
+    private Animator animator;
+
     void Start()
     {
-        if (moveStyle == MOVE_STYLES.DISPLACEMENT_VERTICAL)
+        animator = GetComponent<Animator>();
+        if (motion == MOTION.DISPLACEMENT)
         {
-            startPosition = transform.position.y;
+            startPosition = transform.localPosition.y;
             currentPosition = startPosition;
             moveState = MOVE_STATE.STATIC;
         }
     }
 
+    public void onAnimationCompleted()
+    {
+        Debug.Log("onAnimationCompleted");
+        this.puzzleSolvedAction.Invoke();
+    }
+
     public void registerPuzzleSolvedAction(Action action)
     {
         this.puzzleSolvedAction = action;
+    }
+
+    public void toggleAnim(bool b)
+    {
+        if (b)
+        {
+            animator.SetFloat("speed", 1.0f);
+        }
+        else
+        {
+            animator.SetFloat("speed", -2.0f);
+        }
     }
 
     //It is assumed this would run every frame function
@@ -90,9 +111,15 @@ public class PuzzlePiece : MonoBehaviour
                 break;
         }
 
-        if (moveStyle == MOVE_STYLES.DISPLACEMENT_VERTICAL)
+        switch (motion)
         {
-            currentPosition = transform.position.y;
+            case MOTION.DISPLACEMENT:
+                currentPosition = transform.localPosition.y;
+                break;
+
+            case MOTION.ROTATION:
+                currentPosition = transform.eulerAngles.z;
+                break;
         }
 
         var newPosition = 0.0f;
@@ -107,9 +134,15 @@ public class PuzzlePiece : MonoBehaviour
             newPosition = Mathf.SmoothStep(startPosition, endPosition, step);
         }
 
-        if (moveStyle == MOVE_STYLES.DISPLACEMENT_VERTICAL)
+        switch (motion)
         {
-            transform.localPosition = new Vector3(transform.position.x, newPosition, transform.position.z);
+            case MOTION.DISPLACEMENT:
+                transform.localPosition = new Vector3(transform.position.x, newPosition, transform.position.z);
+                break;
+
+            case MOTION.ROTATION:
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, newPosition);
+                break;
         }
     }
 }

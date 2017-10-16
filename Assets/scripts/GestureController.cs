@@ -54,13 +54,13 @@ public class GestureController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("mouse button down");
+            // Debug.Log("mouse button down");
             isReceivingUserTouchInput = true;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("mouse button up");
+            // Debug.Log("mouse button up");
             breakGesture();
         }
     }
@@ -112,7 +112,7 @@ public class GestureController : MonoBehaviour
                 sign = Mathf.Sign(v1.x * v2.y - v1.y * v2.x);
                 dot = Vector2.Dot(v1, v2);
             }
-            Debug.Log("dot product: " + dot + " | sign: " + sign);
+            // Debug.Log("dot product: " + dot + " | sign: " + sign);
 
             //Assign direction
             switch (currentDirection)

@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 1602840250}
   gameOverPanelCanvasGroup: {fileID: 199600752}
-  nextLevelName: test
+  nextLevelName: puzzle-3
   gameOverFadeInMultiplier: 3
 --- !u!1 &213505300
 GameObject:
@@ -963,7 +963,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: grimnercreations.tala.build2
+  m_Text: grimnercreations.tala.build3
 --- !u!222 &861418724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveStyle: 0
+  motion: 0
   endPosition: 1.28
   acceleration: 0.15
   deceleration: 0.65
@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveStyle: 0
+  motion: 0
   endPosition: 0
   acceleration: 0.05
   deceleration: 0.3
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveStyle: 0
+  motion: 0
   endPosition: 0
   acceleration: 0.05
   deceleration: 0.3
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveStyle: 0
+  motion: 0
   endPosition: -1.28
   acceleration: 0.15
   deceleration: 0.65

@@ -57,14 +57,14 @@ public class PuzzleManager : MonoBehaviour
     private void startSolvingPuzzlePiece(PuzzlePiece puzzlePiece)
     {
         Debug.Log("startSolvingPuzzlePiece(): ");
-        puzzlePiece.toggleMovement(true);
+        puzzlePiece.toggleAnim(true);
         puzzlePiece.registerPuzzleSolvedAction(action_currentPuzzleSolved);
     }
 
     private void stopSolvingPuzzlePiece(PuzzlePiece puzzlePiece)
     {
         Debug.Log("stopSolvingPuzzlePiece(): ");
-        puzzlePiece.toggleMovement(false);
+        puzzlePiece.toggleAnim(false);
     }
 
     void Start()

@@ -27,7 +27,6 @@ public class GameOverScreen : MonoBehaviour
             Debug.Log("onClick: fading");
 
             gameOverPanelCanvasGroup.alpha = Mathf.Lerp(gameOverPanelCanvasGroup.alpha, 1f, gameOverFadeInMultiplier * Time.deltaTime);
-            Debug.Log("alpha: " + gameOverPanelCanvasGroup.alpha);
             if (gameOverPanelCanvasGroup.alpha > 0.95)
             {
                 gameOverPanelCanvasGroup.interactable = true;
@@ -46,7 +45,6 @@ public class GameOverScreen : MonoBehaviour
 
     public void onClick_nextLevel()
     {
-        Debug.Log("onClick");
         SceneManager.LoadScene(nextLevelName);
     }
 }
