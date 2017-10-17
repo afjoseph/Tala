@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 199600750}
   - component: {fileID: 199600752}
   - component: {fileID: 199600753}
+  - component: {fileID: 199600754}
   m_Layer: 5
   m_Name: Game Over Panel
   m_TagString: Untagged
@@ -203,9 +204,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 1602840250}
-  gameOverPanelCanvasGroup: {fileID: 199600752}
-  nextLevelName: puzzle-2
-  gameOverFadeInMultiplier: 3
+  nextLevelName: puzzle-6-with-anims
+  animatedEvents: []
+--- !u!95 &199600754
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199600748}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 654c97eab573c4a32aea1f53d5f102f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &213505300
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: grimnercreations.tala.build3
+  m_Text: grimnercreations.tala.build4
 --- !u!222 &870832305
 CanvasRenderer:
   m_ObjectHideFlags: 0

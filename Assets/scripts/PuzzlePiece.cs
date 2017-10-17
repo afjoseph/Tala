@@ -32,11 +32,11 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (b)
         {
-            animator.SetFloat("speed", 1.0f);
+            animator.SetFloat("speed", accelerationMultiplier);
         }
         else
         {
-            animator.SetFloat("speed", -2.0f);
+            animator.SetFloat("speed", decelerationMultiplier);
         }
     }
 }

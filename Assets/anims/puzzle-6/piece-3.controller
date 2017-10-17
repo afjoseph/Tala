@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: piece-2
+  m_Name: piece-3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: speed
@@ -94,7 +94,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 41723fa2b34004bc692abd9022e7c6b6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 55cc7863d79c84ea18bcf19f237afa17, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -118,7 +118,7 @@ AnimatorState:
   m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7c57a46652ceb4a7e98ac84a488c687f, type: 2}
+  m_Motion: {fileID: 7400000, guid: dbdd258e4ce9749448f2d061a78556ba, type: 2}
   m_Tag: 
   m_SpeedParameter: speed
   m_MirrorParameter: aaa

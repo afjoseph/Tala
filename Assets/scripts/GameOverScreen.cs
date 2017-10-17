@@ -7,40 +7,57 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public PuzzleManager puzzleManager;
-    public CanvasGroup gameOverPanelCanvasGroup;
     public string nextLevelName;
-    public float gameOverFadeInMultiplier = 3f;
+    public List<AnimatedEvent> animatedEvents;
+    private Queue<AnimatedEvent> animatedEventsQueue = new Queue<AnimatedEvent>();
+    private Animator animator;
 
     public void Start()
     {
-        gameOverPanelCanvasGroup.alpha = 0f;
-        gameOverPanelCanvasGroup.interactable = false;
-        gameOverPanelCanvasGroup.blocksRaycasts = false;
+        animator = GetComponent<Animator>();
+        foreach (var animator in animatedEvents)
+        {
+            animatedEventsQueue.Enqueue(animator);
+        }
 
-        puzzleManager.registerGameOverAction(action_activateScreen);
+        puzzleManager.registerGameOverAction(action_gameOver);
     }
 
-    IEnumerator activateScreen()
+    public void action_gameOver()
     {
-        for (; ; )
+        if (animatedEventsQueue.Count == 0)
         {
-            Debug.Log("onClick: fading");
-
-            gameOverPanelCanvasGroup.alpha = Mathf.Lerp(gameOverPanelCanvasGroup.alpha, 1f, gameOverFadeInMultiplier * Time.deltaTime);
-            if (gameOverPanelCanvasGroup.alpha > 0.95)
-            {
-                gameOverPanelCanvasGroup.interactable = true;
-                gameOverPanelCanvasGroup.blocksRaycasts = true;
-                yield break;
-            }
-
-            yield return new WaitForSeconds(0.01f);
+            activateGameOver();
+        }
+        else
+        {
+            startAnimatedEvent(animatedEventsQueue.Peek());
         }
     }
 
-    public void action_activateScreen()
+    public void startAnimatedEvent(AnimatedEvent animatedEvent)
     {
-        StartCoroutine("activateScreen");
+        animatedEvent.triggerAnimation();
+        animatedEvent.registerAnimatedEventCompletedAction(action_onAnimatedEventCompleted);
+    }
+
+    public void action_onAnimatedEventCompleted()
+    {
+        Debug.Log("action_onAnimatedEventCompleted(): ");
+
+        animatedEventsQueue.Dequeue();
+        if (animatedEventsQueue.Count == 0)
+        {
+            activateGameOver();
+            return;
+        }
+
+        startAnimatedEvent(animatedEventsQueue.Peek());
+    }
+
+    private void activateGameOver()
+    {
+        animator.SetTrigger("fadeIn");
     }
 
     public void onClick_nextLevel()
