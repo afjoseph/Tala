@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
-    public float endPosition;
     public float accelerationMultiplier = 1.0f;
     public float decelerationMultiplier = -2.0f;
 
