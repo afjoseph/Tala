@@ -203,9 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 1602840250}
-  gameOverPanelCanvasGroup: {fileID: 199600752}
-  nextLevelName: puzzle-1
-  gameOverFadeInMultiplier: 3
+  nextLevelName: puzzle-6
+  animatedEvents: []
 --- !u!1 &213505300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,10 +1137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: 0
-  endPosition: 0
-  acceleration: 0.2
-  deceleration: 0.65
+  accelerationMultiplier: 1
+  decelerationMultiplier: -2
 --- !u!212 &1318866617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1225,10 +1222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: 0
-  endPosition: 0
-  acceleration: 0.2
-  deceleration: 0.65
+  accelerationMultiplier: 1
+  decelerationMultiplier: -2
 --- !u!212 &1334660822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1584,10 +1579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: 0
-  endPosition: 0
-  acceleration: 0.2
-  deceleration: 0.65
+  accelerationMultiplier: 1
+  decelerationMultiplier: -2
 --- !u!212 &1758751938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1745,10 +1738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6b1415548264e2f9ab07e86baa4398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: 0
-  endPosition: 0
-  acceleration: 0.2
-  deceleration: 0.65
+  accelerationMultiplier: 1
+  decelerationMultiplier: -2
 --- !u!212 &1873592031
 SpriteRenderer:
   m_ObjectHideFlags: 0
