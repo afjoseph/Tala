@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 246979249}
   - component: {fileID: 246979248}
   - component: {fileID: 246979247}
+  - component: {fileID: 246979250}
   m_Layer: 5
   m_Name: btn_center
   m_TagString: Untagged
@@ -287,6 +288,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246979245}
+--- !u!225 &246979250
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246979245}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &329344932
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +769,7 @@ RectTransform:
   - {fileID: 1383948341}
   - {fileID: 1188174887}
   - {fileID: 2120613951}
+  - {fileID: 1396501694}
   m_Father: {fileID: 1602840247}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -835,6 +848,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1188174887}
+  - component: {fileID: 1188174888}
   m_Layer: 5
   m_Name: splits
   m_TagString: Untagged
@@ -862,6 +876,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1188174888
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1188174886}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1292734162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1078,105 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1396501693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1396501694}
+  - component: {fileID: 1396501697}
+  - component: {fileID: 1396501696}
+  - component: {fileID: 1396501695}
+  m_Layer: 5
+  m_Name: About text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1396501694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396501693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1145174340}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 4.9, y: -54}
+  m_SizeDelta: {x: -130.2, y: -328}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1396501695
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396501693}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &1396501696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396501693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Tala is designed and developer to declutter your mind from a world overload
+    with information. What is provided in Tala comes from extensive research in human
+    psychology and behaviour.
+
+
+    You''ll encounter simple geometric puzzles to solve accompanied with sounds from
+    nature.
+
+
+    The simple gestures would allow your brain to go into a meditative state. You
+    will be able to wander off in a calm and relaxing manner.
+
+
+    <color=#ff0000>All this is designed by Ardavan Hp.</color>'
+--- !u!222 &1396501697
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396501693}
 --- !u!1 &1529301463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,8 +1333,6 @@ GameObject:
   - component: {fileID: 1602840246}
   - component: {fileID: 1602840245}
   - component: {fileID: 1602840244}
-  - component: {fileID: 1602840249}
-  - component: {fileID: 1602840250}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1295,34 +1417,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1602840249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1602840243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2a2cd50a00c4a5b8a172baef8cd724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 1602840250}
-  maxDelay: 0.3
-  gestureRadius: 12
---- !u!114 &1602840250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1602840243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b39e3771457d45948c02dcd3866c189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePieces:
-  - {fileID: 0}
-  gestureController: {fileID: 1602840249}
 --- !u!1 &1751817618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1496,7 @@ GameObject:
   - component: {fileID: 2033956142}
   - component: {fileID: 2033956141}
   - component: {fileID: 2033956140}
+  - component: {fileID: 2033956143}
   m_Layer: 5
   m_Name: btn_top
   m_TagString: Untagged
@@ -1513,6 +1608,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033956138}
+--- !u!225 &2033956143
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033956138}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2120613950
 GameObject:
   m_ObjectHideFlags: 0
