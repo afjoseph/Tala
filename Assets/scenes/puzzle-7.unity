@@ -1265,8 +1265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.6000366, y: 20.610962}
-  m_SizeDelta: {x: -227.5, y: -455.09985}
+  m_AnchoredPosition: {x: 0, y: -159.00003}
+  m_SizeDelta: {x: -255, y: -529.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309040249
 MonoBehaviour:
@@ -1280,7 +1280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 1602840250}
-  nextLevelName: puzzle-8
   animatedEvents: []
 --- !u!95 &1309040250
 Animator:
@@ -1322,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.84}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -660,6 +660,7 @@ GameObject:
   - component: {fileID: 894509284}
   - component: {fileID: 894509283}
   - component: {fileID: 894509282}
+  - component: {fileID: 894509287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -737,6 +738,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &894509287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 894509281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6a18e0302354d69aef184b9408065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: tutorial
+  startAlpha: 1
+  fadeTexture: {fileID: 2800000, guid: 8990ea44393c64803bcc0b588054ef83, type: 3}
+  fadeDuration: 2
+  guiDepth: -1000
+  fadeIntoScene: 1
 --- !u!1 &1145174339
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9df672241a8d4c3391e35df71218e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: puzzle-1
 --- !u!1 &1188174886
 GameObject:
   m_ObjectHideFlags: 0

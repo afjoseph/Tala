@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     private Animator animator;
-    public string firstLevel = "puzzle-1";
 
     void Start () {
         animator = GetComponent<Animator> ();
@@ -32,7 +31,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void onClick_startGame () {
-        SceneManager.LoadScene (firstLevel);
+        CameraFade.GetInstance ().FadeOut ();
     }
 
     public void onClick_displayAbout () {

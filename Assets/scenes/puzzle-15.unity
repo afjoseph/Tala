@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 894509284}
   - component: {fileID: 894509283}
   - component: {fileID: 894509282}
+  - component: {fileID: 894509287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -838,6 +839,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &894509287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 894509281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6a18e0302354d69aef184b9408065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: achievement-third
+  startAlpha: 1
+  fadeTexture: {fileID: 2800000, guid: 8990ea44393c64803bcc0b588054ef83, type: 3}
+  fadeDuration: 2
+  guiDepth: -1000
+  fadeIntoScene: 1
 --- !u!1 &1028738991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,8 +1234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.6000366, y: 20.610962}
-  m_SizeDelta: {x: -227.5, y: -455.09985}
+  m_AnchoredPosition: {x: 0, y: -159.00003}
+  m_SizeDelta: {x: -255, y: -529.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135894587
 MonoBehaviour:
@@ -1231,7 +1249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 1602840250}
-  nextLevelName: puzzle-1
   animatedEvents: []
 --- !u!95 &1135894588
 Animator:
@@ -1273,7 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.84}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -15,8 +15,20 @@ EditorBuildSettings:
     path: Assets/scenes/puzzle-10.unity
     guid: b0a1d0c02527c429885aecd4162e8b32
   - enabled: 1
+    path: Assets/scenes/achievement-third.unity
+    guid: 369ed93f4ea4944999a2ea3476171d4e
+  - enabled: 1
     path: Assets/scenes/puzzle-11.unity
     guid: 65c222eb4e1ca40fa9d94cce455864ee
+  - enabled: 1
+    path: Assets/scenes/achievement-second.unity
+    guid: 5bf0ba766b3eb4a86bb19b0a448d3fe4
+  - enabled: 1
+    path: Assets/scenes/achievement-first.unity
+    guid: 8b1f86f835d904b50ab60d7ffc28cee3
+  - enabled: 1
+    path: Assets/scenes/tutorial.unity
+    guid: 09dc1a7e01a5746bb869650e5d32f07e
   - enabled: 1
     path: Assets/scenes/puzzle-12.unity
     guid: 92566013d294949ec82ef1e9e6f50610

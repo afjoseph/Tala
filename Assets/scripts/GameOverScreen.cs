@@ -1,67 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameOverScreen : MonoBehaviour
-{
+public class GameOverScreen : MonoBehaviour {
     public PuzzleManager puzzleManager;
-    public string nextLevelName;
     public List<AnimatedEvent> animatedEvents;
-    private Queue<AnimatedEvent> animatedEventsQueue = new Queue<AnimatedEvent>();
+    private Queue<AnimatedEvent> animatedEventsQueue = new Queue<AnimatedEvent> ();
     private Animator animator;
 
-    public void Start()
-    {
-        animator = GetComponent<Animator>();
-        foreach (var animator in animatedEvents)
-        {
-            animatedEventsQueue.Enqueue(animator);
+    public void Start () {
+        animator = GetComponent<Animator> ();
+        foreach (var animator in animatedEvents) {
+            animatedEventsQueue.Enqueue (animator);
         }
 
-        puzzleManager.registerGameOverAction(action_gameOver);
+        puzzleManager.registerGameOverAction (action_gameOver);
     }
 
-    public void action_gameOver()
-    {
-        if (animatedEventsQueue.Count == 0)
-        {
-            activateGameOver();
-        }
-        else
-        {
-            startAnimatedEvent(animatedEventsQueue.Peek());
+    public void action_gameOver () {
+        if (animatedEventsQueue.Count == 0) {
+            activateGameOver ();
+        } else {
+            startAnimatedEvent (animatedEventsQueue.Peek ());
         }
     }
 
-    public void startAnimatedEvent(AnimatedEvent animatedEvent)
-    {
-        animatedEvent.triggerAnimation();
-        animatedEvent.registerAnimatedEventCompletedAction(action_onAnimatedEventCompleted);
+    public void startAnimatedEvent (AnimatedEvent animatedEvent) {
+        animatedEvent.triggerAnimation ();
+        animatedEvent.registerAnimatedEventCompletedAction (action_onAnimatedEventCompleted);
     }
 
-    public void action_onAnimatedEventCompleted()
-    {
-        Debug.Log("action_onAnimatedEventCompleted(): ");
+    public void action_onAnimatedEventCompleted () {
+        Debug.Log ("action_onAnimatedEventCompleted(): ");
 
-        animatedEventsQueue.Dequeue();
-        if (animatedEventsQueue.Count == 0)
-        {
-            activateGameOver();
+        animatedEventsQueue.Dequeue ();
+        if (animatedEventsQueue.Count == 0) {
+            activateGameOver ();
             return;
         }
 
-        startAnimatedEvent(animatedEventsQueue.Peek());
+        startAnimatedEvent (animatedEventsQueue.Peek ());
     }
 
-    private void activateGameOver()
-    {
-        animator.SetTrigger("fadeIn");
+    private void activateGameOver () {
+        animator.SetTrigger ("fadeIn");
     }
 
-    public void onClick_nextLevel()
-    {
-        SceneManager.LoadScene(nextLevelName);
+    public void onClick_nextLevel () {
+        CameraFade.GetInstance ().FadeOut ();
     }
 }
