@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11549874, y: 0.35343835}
   m_AnchorMax: {x: 0.89550054, y: 0.6738767}
-  m_AnchoredPosition: {x: 0.00000047684, y: -0.00000023841858}
+  m_AnchoredPosition: {x: 0.00000047683716, y: -0.00000023841858}
   m_SizeDelta: {x: 0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574338422
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6a18e0302354d69aef184b9408065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: puzzle-7
+  nextScene: puzzle-7
   startAlpha: 1
   fadeTexture: {fileID: 2800000, guid: 8990ea44393c64803bcc0b588054ef83, type: 3}
   fadeDuration: 2

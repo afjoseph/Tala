@@ -37,9 +37,4 @@ public class TutorialScreenManager : MonoBehaviour {
 	void onKeyReached_fade_out () {
 		CameraFade.GetInstance ().FadeOut ();
 	}
-
-	void onKeyReached_load_next_level () {
-		SceneManager.LoadScene ("puzzle-1");
-	}
-
 }

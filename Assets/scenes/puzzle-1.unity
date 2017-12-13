@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6a18e0302354d69aef184b9408065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: puzzle-2
+  nextScene: puzzle-2
   startAlpha: 1
   fadeTexture: {fileID: 2800000, guid: 8990ea44393c64803bcc0b588054ef83, type: 3}
   fadeDuration: 2
