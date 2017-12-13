@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ public class CameraFade : MonoBehaviour {
 	// ----------------------------------------
 
 	// Alpha start value
-	public string nextSceneName;
+	public string nextScene;
 	public float startAlpha = 1;
 
 	// Texture used for fading
@@ -92,6 +93,11 @@ public class CameraFade : MonoBehaviour {
 		FadeOut (duration, 1);
 	}
 
+	public void FadeOut (string nextScene) {
+		this.nextScene = nextScene;
+		FadeOut ();
+	}
+
 	// ---------------------------------------- 
 	// 	STATIC FADING FOR MAIN CAMERA
 	// ----------------------------------------
@@ -167,8 +173,10 @@ public class CameraFade : MonoBehaviour {
 			GUI.depth = guiDepth;
 			GUI.Label (new Rect (-10, -10, Screen.width + 10, Screen.height + 10), dummyTex, backgroundStyle);
 
-			if (currentAlpha == 1 && fadeDirection == 1) {
-				SceneManager.LoadScene (nextSceneName);
+			if (this.currentAlpha == 1 &&
+				this.fadeDirection == 1 &&
+				!String.IsNullOrEmpty (this.nextScene)) {
+				SceneManager.LoadScene (this.nextScene);
 			}
 		}
 	}

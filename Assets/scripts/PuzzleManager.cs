@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PuzzleManager : MonoBehaviour
-{
-    public List<PuzzlePiece> puzzlePieces = new List<PuzzlePiece>();
-    private Queue<PuzzlePiece> queue = new Queue<PuzzlePiece>();
+public class PuzzleManager : MonoBehaviour {
+    public List<PuzzlePiece> puzzlePieces = new List<PuzzlePiece> ();
+    private Queue<PuzzlePiece> queue = new Queue<PuzzlePiece> ();
     public GestureController gestureController;
 
     //TODO: turn this into a game state where the state manager would broadcast a GAME_OVER event
@@ -15,78 +15,72 @@ public class PuzzleManager : MonoBehaviour
     [NonSerialized]
     public bool isGameWon = false;
 
-    private void action_gestureStart()
-    {
-        Debug.Log("action_gestureStart(): ");
+    void Start () {
+        gestureController.registerGestureBreakAction (action_gestureBreak);
+        gestureController.registerGestureStartAction (action_gestureStart);
 
-        if (queue.Count == 0)
-        {
+        foreach (var puzzlePiece in puzzlePieces) {
+            queue.Enqueue (puzzlePiece);
+        }
+    }
+
+    void Update () {
+        if (Input.GetKeyDown (KeyCode.Escape)) {
+            CameraFade.GetInstance ().FadeOut ("menu");
+        }
+    }
+
+    private void action_gestureStart () {
+        // Debug.Log("action_gestureStart(): ");
+
+        if (queue.Count == 0) {
             return;
         }
 
-        Debug.Log(queue.Peek());
-        startSolvingPuzzlePiece(queue.Peek());
+        // Debug.Log(queue.Peek());
+        startSolvingPuzzlePiece (queue.Peek ());
     }
 
-    private void action_gestureBreak()
-    {
-        Debug.Log("action_gestureBreak(): ");
+    private void action_gestureBreak () {
+        // Debug.Log("action_gestureBreak(): ");
 
-        if (queue.Count == 0)
-        {
+        if (queue.Count == 0) {
             return;
         }
 
-        stopSolvingPuzzlePiece(queue.Peek());
+        stopSolvingPuzzlePiece (queue.Peek ());
     }
 
-    private void action_currentPuzzleSolved()
-    {
-        Debug.Log("action_currentPuzzleSolved(): ");
+    private void action_currentPuzzleSolved () {
+        // Debug.Log("action_currentPuzzleSolved(): ");
 
-        queue.Dequeue();
-        if (queue.Count == 0)
-        {
-            activateGameOver();
+        queue.Dequeue ();
+        if (queue.Count == 0) {
+            activateGameOver ();
             return;
         }
 
-        startSolvingPuzzlePiece(queue.Peek());
+        startSolvingPuzzlePiece (queue.Peek ());
     }
 
-    private void startSolvingPuzzlePiece(PuzzlePiece puzzlePiece)
-    {
-        Debug.Log("startSolvingPuzzlePiece(): ");
-        puzzlePiece.toggleAnim(true);
-        puzzlePiece.registerPuzzleSolvedAction(action_currentPuzzleSolved);
+    private void startSolvingPuzzlePiece (PuzzlePiece puzzlePiece) {
+        // Debug.Log("startSolvingPuzzlePiece(): ");
+        puzzlePiece.toggleAnim (true);
+        puzzlePiece.registerPuzzleSolvedAction (action_currentPuzzleSolved);
     }
 
-    private void stopSolvingPuzzlePiece(PuzzlePiece puzzlePiece)
-    {
-        Debug.Log("stopSolvingPuzzlePiece(): ");
-        puzzlePiece.toggleAnim(false);
+    private void stopSolvingPuzzlePiece (PuzzlePiece puzzlePiece) {
+        Debug.Log ("stopSolvingPuzzlePiece(): ");
+        puzzlePiece.toggleAnim (false);
     }
 
-    void Start()
-    {
-        gestureController.registerGestureBreakAction(action_gestureBreak);
-        gestureController.registerGestureStartAction(action_gestureStart);
-
-        foreach (var puzzlePiece in puzzlePieces)
-        {
-            queue.Enqueue(puzzlePiece);
-        }
-    }
-
-    public void registerGameOverAction(Action action)
-    {
+    public void registerGameOverAction (Action action) {
         gameOverAction = action;
     }
 
-    private void activateGameOver()
-    {
-        Debug.Log("Game is won");
+    private void activateGameOver () {
+        // Debug.Log("Game is won");
         isGameWon = true;
-        gameOverAction.Invoke();
+        gameOverAction.Invoke ();
     }
 }

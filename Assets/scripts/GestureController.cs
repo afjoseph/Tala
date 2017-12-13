@@ -125,7 +125,6 @@ public class GestureController : MonoBehaviour
                     //      Else, the user must've broken the gesture
                     if (sign > 0)
                     {
-                        Debug.Log("Breaking gesture 1");
                         breakGesture();
                         yield return new WaitForSeconds(maxDelay);
                         continue;
@@ -136,7 +135,6 @@ public class GestureController : MonoBehaviour
                     //      Else, the user must've broken the gesture
                     if (sign < 0)
                     {
-                        Debug.Log("Breaking gesture 2");
                         breakGesture();
                         yield return new WaitForSeconds(maxDelay);
                         continue;
@@ -147,7 +145,7 @@ public class GestureController : MonoBehaviour
             // So far, the gesture is still moving in a proper direction, check the dot product for a break in gesture
             if (dot < 0.0f || dot > this.gestureRadius)
             {
-                Debug.Log("Breaking gesture 3");
+                // Debug.Log("Breaking gesture 3");
                 breakGesture();
                 yield return new WaitForSeconds(maxDelay);
                 continue;
